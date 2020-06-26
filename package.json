@@ -25,7 +25,6 @@
     "@ethersproject/address": "^5.0.0-beta.134",
     "@ethersproject/solidity": "^5.0.0-beta.131",
     "big.js": "^5.2.2",
-    "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.1",
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",

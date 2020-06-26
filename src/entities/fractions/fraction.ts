@@ -1,6 +1,5 @@
 import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
-import _Decimal from 'decimal.js-light'
 import _Big, { RoundingMode } from 'big.js'
 import toFormat from 'toformat'
 
@@ -8,14 +7,7 @@ import { BigintIsh, Rounding } from '../../constants'
 import { ONE } from '../../constants'
 import { parseBigintIsh } from '../../utils'
 
-const Decimal = toFormat(_Decimal)
 const Big = toFormat(_Big)
-
-const toSignificantRounding = {
-  [Rounding.ROUND_DOWN]: Decimal.ROUND_DOWN,
-  [Rounding.ROUND_HALF_UP]: Decimal.ROUND_HALF_UP,
-  [Rounding.ROUND_UP]: Decimal.ROUND_UP
-}
 
 const toFixedRounding = {
   [Rounding.ROUND_DOWN]: RoundingMode.RoundDown,
@@ -112,21 +104,6 @@ export class Fraction {
       JSBI.multiply(this.numerator, otherParsed.denominator),
       JSBI.multiply(this.denominator, otherParsed.numerator)
     )
-  }
-
-  toSignificant(
-    significantDigits: number,
-    format: object = { groupSeparator: '' },
-    rounding: Rounding = Rounding.ROUND_HALF_UP
-  ): string {
-    invariant(Number.isInteger(significantDigits), `${significantDigits} is not an integer.`)
-    invariant(significantDigits > 0, `${significantDigits} is not positive.`)
-
-    Decimal.set({ precision: significantDigits + 1, rounding: toSignificantRounding[rounding] })
-    const quotient = new Decimal(this.numerator.toString())
-      .div(this.denominator.toString())
-      .toSignificantDigits(significantDigits)
-    return quotient.toFormat(quotient.decimalPlaces(), format)
   }
 
   toFixed(

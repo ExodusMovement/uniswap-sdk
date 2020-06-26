@@ -60,10 +60,6 @@ export class Price extends Fraction {
     return new TokenAmount(this.quoteToken, super.multiply(tokenAmount.raw).quotient)
   }
 
-  toSignificant(significantDigits: number = 6, format?: object, rounding?: Rounding): string {
-    return this.adjusted.toSignificant(significantDigits, format, rounding)
-  }
-
   toFixed(decimalPlaces: number = 4, format?: object, rounding?: Rounding): string {
     return this.adjusted.toFixed(decimalPlaces, format, rounding)
   }

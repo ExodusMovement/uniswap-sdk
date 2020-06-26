@@ -36,10 +36,6 @@ export class TokenAmount extends Fraction {
     return new TokenAmount(this.token, JSBI.subtract(this.raw, other.raw))
   }
 
-  toSignificant(significantDigits: number = 6, format?: object, rounding: Rounding = Rounding.ROUND_DOWN): string {
-    return super.toSignificant(significantDigits, format, rounding)
-  }
-
   toFixed(
     decimalPlaces: number = this.token.decimals,
     format?: object,
