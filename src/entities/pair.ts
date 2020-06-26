@@ -1,8 +1,5 @@
 import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
-import { getNetwork } from '@ethersproject/networks'
-import { getDefaultProvider } from '@ethersproject/providers'
-import { Contract } from '@ethersproject/contracts'
 import { pack, keccak256 } from '@ethersproject/solidity'
 import { getCreate2Address } from '@ethersproject/address'
 
@@ -17,7 +14,6 @@ import {
   _997,
   _1000
 } from '../constants'
-import IUniswapV2Pair from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { sqrt, parseBigintIsh } from '../utils'
 import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
 import { Token } from './token'
@@ -47,18 +43,6 @@ export class Pair {
     }
 
     return CACHE[tokens[0].address][tokens[1].address]
-  }
-
-  static async fetchData(
-    tokenA: Token,
-    tokenB: Token,
-    provider = getDefaultProvider(getNetwork(tokenA.chainId))
-  ): Promise<Pair> {
-    invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
-    const address = Pair.getAddress(tokenA, tokenB)
-    const [reserves0, reserves1] = await new Contract(address, IUniswapV2Pair.abi, provider).getReserves()
-    const balances = tokenA.sortsBefore(tokenB) ? [reserves0, reserves1] : [reserves1, reserves0]
-    return new Pair(new TokenAmount(tokenA, balances[0]), new TokenAmount(tokenB, balances[1]))
   }
 
   constructor(tokenAmountA: TokenAmount, tokenAmountB: TokenAmount) {
