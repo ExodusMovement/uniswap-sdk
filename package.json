@@ -1,11 +1,11 @@
 {
   "name": "@exodus/uniswap-sdk",
   "license": "MIT",
-  "version": "2.0.6-exodus0",
+  "version": "2.0.6-exodus1",
   "description": "🛠 An SDK for building applications on top of Uniswap.",
-  "main": "dist/sdk.cjs.development.js",
+  "main": "dist/uniswap-sdk.cjs.development.js",
   "files": [
-    "dist/sdk.cjs.development.js"
+    "dist/uniswap-sdk.cjs.development.js"
   ],
   "repository": "https://github.com/ExodusMovement/uniswap-sdk.git",
   "keywords": [
