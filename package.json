@@ -3,17 +3,15 @@
   "license": "MIT",
   "version": "2.0.6",
   "description": "🛠 An SDK for building applications on top of Uniswap.",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/sdk.cjs.development.js",
   "files": [
-    "dist"
+    "dist/sdk.cjs.development.js"
   ],
   "repository": "https://github.com/Uniswap/uniswap-sdk.git",
   "keywords": [
     "uniswap",
     "ethereum"
   ],
-  "module": "dist/sdk.esm.js",
   "scripts": {
     "lint": "tsdx lint src test",
     "build": "tsdx build",
