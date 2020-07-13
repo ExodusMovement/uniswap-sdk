@@ -36,7 +36,7 @@
     "tsdx": "^0.12.3"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "prettier": {
     "printWidth": 120,
