@@ -25,14 +25,13 @@
     "big.js": "^5.2.2",
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
-    "toformat": "^2.0.0"
+    "toformat": "^2.0.0",
+    "jsbi": "^3.1.1"
   },
   "devDependencies": {
     "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.25",
     "@uniswap/v2-core": "^1.0.0",
-    "jsbi": "^3.1.1",
-    "babel-plugin-transform-jsbi-to-bigint": "https://github.com/ExodusMovement/babel-plugin-transform-jsbi-to-bigint#no-literals",
     "tsdx": "^0.12.3"
   },
   "engines": {

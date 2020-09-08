@@ -1602,10 +1602,6 @@ babel-plugin-transform-async-to-promises@^0.8.14:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-promises/-/babel-plugin-transform-async-to-promises-0.8.15.tgz#13b6d8ef13676b4e3c576d3600b85344bb1ba346"
   integrity sha512-fDXP68ZqcinZO2WCiimCL9zhGjGXOnn3D33zvbh+yheZ/qOrNVVDDIBtAaM3Faz8TRvQzHiRKsu3hfrBAhEncQ==
 
-"babel-plugin-transform-jsbi-to-bigint@https://github.com/ExodusMovement/babel-plugin-transform-jsbi-to-bigint#no-literals":
-  version "1.3.1"
-  resolved "https://github.com/ExodusMovement/babel-plugin-transform-jsbi-to-bigint#23acc21bd5d799197d6e2415ff18081332b8928f"
-
 babel-plugin-transform-rename-import@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-rename-import/-/babel-plugin-transform-rename-import-2.3.0.tgz#5d9d645f937b0ca5c26a24b2510a06277b6ffd9b"
